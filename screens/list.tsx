@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, Text, TouchableOpacity, View} from 'react-native';
-import {globalStyles} from "../styles/global";
+import {globalStyles} from "../styles/global_style";
 import Card from "../shared/card";
 import BannerAd from "../shared/bannerad";
+import Container from "../shared/container";
 
 export default function List({ navigation }) {
 
@@ -35,7 +36,7 @@ export default function List({ navigation }) {
     }
 
     return (
-        <View style={globalStyles.container}>
+        <Container>
             <FlatList
                 data={response.data}
                 keyExtractor={(item) => item.n}
@@ -47,7 +48,6 @@ export default function List({ navigation }) {
                     </Card>
                 </TouchableOpacity>
             )} />
-            <BannerAd/>
-        </View>
+        </Container>
     );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {ImageBackground, View} from 'react-native';
-import {globalStyles} from "../styles/global";
+import {globalStyles} from "../styles/global_style";
 
 export default function Container(props) {
     return (

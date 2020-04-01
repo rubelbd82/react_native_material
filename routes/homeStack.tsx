@@ -3,11 +3,21 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Details from '../screens/details';
 import Header from "../shared/header";
 import Home from '../screens/home';
-import List from "../screens/list";
-import {globalStyles} from "../styles/global";
+import {globalStyles} from "../styles/global_style";
+import WorldStatus from "../screens/world_status";
+import MyStatus from "../screens/my_status";
+import WorldMap from "../screens/world_map";
 
 
 const screens = {
+    WorldMap: {
+        screen: WorldMap,
+        navigationOptions: ({ navigation }) => {
+            return {
+                headerTitle: () => <Header title='Map' navigation={navigation}/>
+            }
+        },
+    },
     Home: {
         screen: Home,
         navigationOptions: ({ navigation }) => {
@@ -16,18 +26,22 @@ const screens = {
             }
         },
     },
-    List: {
-        screen: List,
+    MyStatus: {
+        screen: MyStatus,
         navigationOptions: ({ navigation }) => {
             return {
-                headerTitle: () => <Header title='Price' navigation={navigation}/>
+                headerTitle: () => <Header title='My Status' navigation={navigation}/>
             }
         },
     },
-    Details: {
-        screen: Details,
+    GlobalStatus: {
+        screen: WorldStatus,
+        navigationOptions: ({ navigation }) => {
+            return {
+                headerTitle: () => <Header title='Global Status' navigation={navigation}/>
+            }
+        },
     },
-
 
 };
 

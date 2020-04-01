@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {Colors} from "../constants/colors";
+import {Colors} from "../utils/colors";
 
 export const globalStyles = StyleSheet.create({
     // Header
@@ -31,7 +31,7 @@ export const globalStyles = StyleSheet.create({
         fontSize: 20,
         color: Colors.white,
         letterSpacing: 1,
-        marginLeft: 60,
+        marginLeft: 30,
     },
     drawerIcon: {
         position: 'absolute',
@@ -71,8 +71,43 @@ export const globalStyles = StyleSheet.create({
         marginVertical: 6,
     },
     cardContent: {
-        marginHorizontal: 18,
-        marginVertical: 20,
+        marginHorizontal: 15,
+        marginVertical: 10,
+    },
+
+    buttonContainer: {
+        margin: 10,
+        padding: 10,
+        backgroundColor: Colors.secondary,
+    },
+
+    buttonText: {
+        padding: 5,
+        color: 'white',
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
+
+    headLine: {
+        fontSize: 20,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        paddingBottom: 5,
+        marginBottom: 0,
+        marginTop: 0,
+        paddingTop: 0,
+        borderBottomWidth: 2,
+        borderBottomColor: Colors.primary
+    },
+
+    twoColContainer: {flexDirection: 'row', margin: 5, padding: 5},
+
+    /* shapes */
+
+    divider: {
+        borderBottomWidth: 1,
+        borderBottomColor: Colors.gray
     }
+
 
 });
