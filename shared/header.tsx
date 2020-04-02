@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons';
 import {globalStyles} from "../styles/global_style";
-import {Colors} from "../utils/colors";
+import {Colors} from "../common/colors";
 
 export default function Header({ title, navigation }) {
 

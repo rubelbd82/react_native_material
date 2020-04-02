@@ -1,14 +1,25 @@
 
-export const Colors = {
-    primary:    '#add536',
-    secondary:  '#488aff',
-    danger:     '#f53d3d',
-    light:      '#f4f4f4',
-    dark:       '#222',
-    facebook:   '#3b5998',
-    twitter:    '#00aced',
-    whatsapp:   '#075e54',
-    white:      '#ffffff',
-    gray:       '#C0C0C0'
+export  default function csvToJson(csv)  {
+    const lines = csv.split("\n");
+
+    const result = [];
+
+    const headers = lines[0].split(",");
+
+    for (var i = 1; i < lines.length; i++) {
+
+        const obj = {};
+        const currentline = lines[i].split(",");
+
+        for (let j = 0; j < headers.length; j++) {
+        obj[headers[j]] = currentline[j];
+        }
+
+    result.push(obj);
+
+    }
+
+    return result; //JavaScript object
+    // return JSON.stringify(result); //JSON
 };
 
