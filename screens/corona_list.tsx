@@ -30,14 +30,10 @@ export default function CoronaList({ navigation }) {
     const [dataFetched, setLocationFetched] = useState(false);
     const [showActivityIndicator, setShowActivityIndicator] = useState(false);
     const [rowId, setRowId] = useState(0);
-
     let newRowId = 0;
-
     let latitude = 0.0;
     let longitude = 0.0;
 
-    // const [latitude, setLatitude] = useState(0.0);
-    // const [longitude, setLongitude] = useState(0.0);
     const [response, setResponse] = useState({
         'loaded': false,
         'data' : []
@@ -48,7 +44,6 @@ export default function CoronaList({ navigation }) {
     const successHandler = (message: string, data: any) => {
         setShowActivityIndicator(false);
         setResponse({'loaded'  : true, 'data' : data});
-
     }
 
     const failHandler = (message) => {
@@ -94,8 +89,7 @@ export default function CoronaList({ navigation }) {
             AsyncStorage.getItem('rowId').then(res => { if (res !== null) {
                 setRowId(Number(res));
                 newRowId = Number(res);
-            }}).then(() => { log('then id: ', rowId); log('and then new row ID: ', newRowId)});
-
+            }}).then(() => { log('rowId id: ', rowId); });
             _getLocationAsync();
             setLocationFetched(true);
         }
@@ -160,13 +154,7 @@ export default function CoronaList({ navigation }) {
             });
     }
 
-    const pressHandler = () => {
-        //navigation.navigate('ReviewDetails');
-        navigation.push('Details');
-    }
-
     let message;
-
 
     if ((navigation.getParam('conditionReal'))) {
         message = <Card><Text>Following patients have tested and the result is Positive. </Text></Card>
@@ -202,18 +190,3 @@ export default function CoronaList({ navigation }) {
 
     );
 }
-
-
-const styles = StyleSheet.create({
-    container: {
-        paddingTop: 50,
-    },
-    tinyLogo: {
-        width: 50,
-        height: 50,
-    },
-    logo: {
-        width: 66,
-        height: 58,
-    },
-});
