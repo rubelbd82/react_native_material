@@ -1,9 +1,10 @@
 import React from 'react';
-import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Alert, Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {globalStyles} from "../styles/global_style";
 // import Card from "../shared/card";
 import Container from "../shared/container";
 import Card from "../shared/card";
+import {notifyMessage} from "../common/utils";
 
 export default function Home({ navigation }) {
 
@@ -17,23 +18,31 @@ export default function Home({ navigation }) {
         navigation.push('MyStatus');
     }
 
-    const actionWorldMap = () => {
+    const actionCoronaNearMe = () => {
         //navigation.navigate('ReviewDetails');
-        navigation.push('WorldMap');
+        navigation.push('CoronaList', {'conditionReal' : true});
     }
+
+    const actionPossibleCoronaNearMe = () => {
+        //navigation.navigate('ReviewDetails');
+        navigation.push('CoronaList', {'conditionReal' : false});
+    }
+
 
     return (
         <Container>
-            <TouchableOpacity style={globalStyles.buttonContainer} onPress={actionGlobalStatus} >
-                <Text style={globalStyles.buttonText}>Global Status</Text>
-            </TouchableOpacity>
             <TouchableOpacity style={globalStyles.buttonContainer} onPress={actionMyStatus} >
                 <Text style={globalStyles.buttonText}>My Status</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={globalStyles.buttonContainer} onPress={actionWorldMap} >
-                <Text style={globalStyles.buttonText}>Map</Text>
+            <TouchableOpacity style={globalStyles.buttonContainer} onPress={actionCoronaNearMe} >
+                <Text style={globalStyles.buttonText}>Corona Near Me</Text>
             </TouchableOpacity>
-
+            <TouchableOpacity style={globalStyles.buttonContainer} onPress={actionPossibleCoronaNearMe} >
+                <Text style={globalStyles.buttonText}>Possible patient with symptoms</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={globalStyles.buttonContainer} onPress={actionGlobalStatus} >
+                <Text style={globalStyles.buttonText}>Global Status</Text>
+            </TouchableOpacity>
         </Container>
     );
 }

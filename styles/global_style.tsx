@@ -14,24 +14,27 @@ export const globalStyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-
     screenBackgroundImage: {
         flex: 1,
         padding: 20
     },
-
     container: {
         flex: 1,
         padding: 0,
         backgroundColor: Colors.white
     },
 
+    //Text sizes
     headerText: {
         fontWeight: 'normal',
         fontSize: 20,
         color: Colors.white,
         letterSpacing: 1,
         marginLeft: 30,
+    },
+    smallText: {
+        fontWeight: 'normal',
+        fontSize: 12,
     },
     drawerIcon: {
         position: 'absolute',
@@ -40,7 +43,6 @@ export const globalStyles = StyleSheet.create({
     },
 
     // Header ends
-
     titleText: {
         fontSize: 18,
         fontWeight: 'bold',
@@ -53,12 +55,11 @@ export const globalStyles = StyleSheet.create({
     list: {
         flex: 1,
         marginHorizontal: 10,
-        marginTop: 24,
-        padding: 30,
+        marginTop: 10,
+        padding: 10,
         backgroundColor: 'pink',
-        fontSize: 24,
+        fontSize: 14,
     },
-
     card: {
         borderRadius: 6,
         elevation: 3,
@@ -107,7 +108,16 @@ export const globalStyles = StyleSheet.create({
     divider: {
         borderBottomWidth: 1,
         borderBottomColor: Colors.gray
+    },
+    loading: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        opacity: 0.6,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
-
-
 });

@@ -7,22 +7,23 @@ import {globalStyles} from "../styles/global_style";
 import WorldStatus from "../screens/world_status";
 import MyStatus from "../screens/my_status";
 import WorldMap from "../screens/world_map";
-
+import CoronaList from "../screens/corona_list";
+import {Colors} from "../common/colors";
 
 const screens = {
-    WorldMap: {
-        screen: WorldMap,
-        navigationOptions: ({ navigation }) => {
-            return {
-                headerTitle: () => <Header title='Map' navigation={navigation}/>
-            }
-        },
-    },
     Home: {
         screen: Home,
         navigationOptions: ({ navigation }) => {
             return {
                 headerTitle: () => <Header title='Home' navigation={navigation}/>
+            }
+        },
+    },
+    CoronaList: {
+        screen: CoronaList,
+        navigationOptions: ({ navigation }) => {
+            return {
+                headerTitle: () => <Header title='Corona list' navigation={navigation}/>
             }
         },
     },
@@ -43,12 +44,21 @@ const screens = {
         },
     },
 
+    WorldMap: {
+        screen: WorldMap,
+        navigationOptions: ({ navigation }) => {
+            return {
+                headerTitle: () => <Header title='Map' navigation={navigation}/>
+            }
+        },
+    },
+
 };
 
 // home stack navigator screens
 const HomeStack = createStackNavigator(screens, {
     defaultNavigationOptions: {
-        headerTintColor: '#444',
+        headerTintColor: Colors.white,
         headerStyle: globalStyles.parentHeaderStyle,
     }
 });

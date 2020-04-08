@@ -10,10 +10,12 @@ const RootDrawerNavigator = createDrawerNavigator({
     Home: {
         screen: HomeStack,
     },
-    About: {
-        screen: AboutStack,
-    },
+
 });
+/*
+About: {
+    screen: AboutStack,
+},*/
 
 export default createAppContainer(RootDrawerNavigator);
 

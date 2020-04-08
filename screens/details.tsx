@@ -1,12 +1,14 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Alert, Button, StyleSheet, Text} from 'react-native';
 import Container from "../shared/container";
+import create = StyleSheet.create;
+
+
 
 export default function Details({navigation}) {
     return (
         <Container>
             <Text>Details Screen </Text>
-            {/*<Text>Details Screen {navigation.getParam('title')} </Text>*/}
         </Container>
     );
 }

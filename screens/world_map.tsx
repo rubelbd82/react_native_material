@@ -23,8 +23,6 @@ export default function WorldMap({ navigation }) {
     const [locationFetched, setLocationFetched] = useState(false);
     const [mapCreated, setMapCreated] = useState(false);
 
-
-
     let handleMapRegionChange = (mapRegion) => {
         console.log(mapRegion);
 
@@ -53,7 +51,7 @@ export default function WorldMap({ navigation }) {
             locationResult: JSON.stringify(location)
         });
 
-setMapCreated(true);
+        setMapCreated(true);
 
     };
 
@@ -84,7 +82,8 @@ setMapCreated(true);
                         <Text>Location permissions are not granted.</Text> :
                         state.mapRegion === null ?
                             <Text>Map region doesn't exist.</Text> :
-                            <MapView
+                            <View><Text>Uncomment Map view</Text></View>
+                            /*<MapView
                                 style={{ alignSelf: 'stretch', height: 400 }}
                                 region={state.mapRegion}
                                 onRegionChange={handleMapRegionChange}
@@ -114,7 +113,7 @@ setMapCreated(true);
 
                                 />
 
-                            </MapView>
+                            </MapView>*/
 
 
             }

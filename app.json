@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "React Native Material (TypeScript)",
-    "slug": "react_native_material",
+    "name": "Corona Near Me",
+    "slug": "corona_near_me",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -27,9 +27,25 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.webindream.coronanearme",
+      "versionCode": 1,
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-0493155888656987/5630582002"
-      }
+        "googleMobileAdsAppId": "your-mobile-ad-id"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_PHONE_STATE",
+        "READ_CONTACTS",
+        "READ_INTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "com.google.android.c2dm.permission.RECEIVE",
+        "com.android.launcher.permission.INSTALL_SHORTCUT",
+        "com.htc.launcher.permission.UPDATE_SHORTCUT"
+      ]
     }
   }
 }
